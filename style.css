@@ -1,0 +1,226 @@
+
+:root {
+    box-sizing: border-box;
+    font-size: 16px;
+    --darkest-blue: hsl(217, 19%, 35%);
+    --darker-blue: hsl(214, 17%, 51%);
+    --lighter-blue: hsl(212, 23%, 69%);
+    --lightest-blue: hsl(210, 46%, 95%);
+    font-family: "Manrope", serif;
+}
+*,
+::before,
+::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 130%;
+    letter-spacing: 0.25px;
+}
+.bodyM {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 140%;
+    /* letter-spacing: 12%; */
+}
+.bodyB {
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 140%;
+    /* letter-spacing: 12%; */
+}
+.bodyE {
+    font-size: 13px;
+    font-weight: normal;
+    line-height: 140%;
+    letter-spacing: 25%;
+}
+.uppercase {
+    text-transform: uppercase;
+}
+body {
+    background-color: var(--lightest-blue);
+}
+main {
+    margin: 1.5em;
+    background-color: white;
+    border-radius: 1em;
+}
+.card {
+    display:flex;
+    flex-direction: column;
+}
+.card > * + *{
+    margin-top: 1.5em;
+}
+
+.hero-image {
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 1em 1em 0 0;
+}
+.hero-image img{
+    /* position: absolute;
+    top: 0;
+    left: 0; */
+    width: 100%;
+}
+h1 {
+    color: var(--darkest-blue);
+    /* margin: 1em 0; */
+}
+h2 {
+    color: var(--darker-blue);
+    /* margin: 1em 0; */
+}
+.narrative {
+    margin-left: 2em;
+    margin-right: 2em;
+}
+.narrative > * + *{
+    margin-top: 1.5em;
+}
+.card-footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    padding-bottom: 1.5em;
+    border-radius: 1em;
+    padding: 1em 2em 1.5em 2em;
+    margin-left: -2em;
+    margin-right: -2em;
+}
+.author {
+    display: flex;
+    flex-direction: row;
+    align-content: center;
+    gap: 1em;
+}
+.author > .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+}
+.author-info > span {
+    display: block;
+}
+.author-info > .author-name {
+    color: var(--darkest-blue);
+}
+.card-footer > .image-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: var(--lightest-blue);
+    margin-left: auto;
+}
+.card-footer > .image-wrapper > .share-icon {
+    width: 13px;
+    height: 13px;
+    margin: 9px;
+    /* filter:brightness(500%); */
+}
+#share {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    color: var(--lightest-blue);
+    background-color: var(--darkest-blue);
+    border-radius: 0 0 1em 1em;
+    padding: 1em 2em 1.5em 2em;
+}
+#share.hidden {
+    display: none;
+}
+.tooltip {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.tooltip  img {
+    width: 20px;
+    height: 20px;
+}
+.tooltip > * + * {
+    margin-left: 1em;
+}
+.tooltip .image-wrapper {
+    width: 32px;
+    height: 32px;
+    border-radius: 16px;
+    background-color: var(--darker-blue);
+    margin-left: auto;
+}
+.tooltip > .image-wrapper .share-icon {
+    width: 13px;
+    height: 13px;
+    margin: 9px;
+    filter:brightness(500%);
+}
+
+@media only screen and (min-width: 700px) {
+    main {
+        width: 600px;
+        height: 350px;
+        margin-top: 50%;
+        margin-left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 1em;
+    }
+    .card {
+        display:flex;
+        flex-direction: row;
+    }
+
+    .hero-image {
+        width: 38%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+        border-radius: 1em 1em 0 0;
+        flex: 1 1 40%;
+    }
+    #share {
+        /* position: relative; */
+        /* width: 100%;
+        position: absolute; */
+        z-index: 1;
+        top: -50%;
+        bottom: 100%;
+        left: 75%;
+    }
+    #share .image-wrapper {
+        display: none;
+    }
+    .narrative {
+        flex: 1 1 60%;
+    }
+    .tooltip {
+        width: 250px; 
+        border-radius: 6px;
+        overflow: visible;
+        background-color: var(--darkest-blue);
+    }
+    .tooltip::after {
+        content: "";
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-left: -5px;
+        border-width: 5px;
+        border-style: solid;
+        border-color: black transparent transparent transparent;
+      }
+      
+}
