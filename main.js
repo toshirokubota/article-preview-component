@@ -1,8 +1,8 @@
-const share_links = document.querySelectorAll('.image-wrapper');
-const share = document.getElementById('share');
-console.log(share_links);
-for(let elm of share_links) {
-    elm.addEventListener('click', ()=>{
-        share.classList.toggle('hidden');
-    });
-}
+const elms = document.querySelectorAll('.activatable');
+const button = document.getElementById('activate');
+console.log(elms, button);
+button.addEventListener('click', () => {
+    for(let elm of elms) {
+        elm.classList.toggle('active');
+    }
+});
